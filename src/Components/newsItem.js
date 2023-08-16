@@ -2,14 +2,22 @@ import React, { Component } from "react";
 
 export class NewsItem extends Component {
   render() {
-    let { title, description, imageUrl, newsUrl, author, time, source } = this.props;
+    let { title, description, imageUrl, newsUrl, author, time, source } =
+      this.props;
     return (
       <div className="my-3">
         <div className="card">
-          <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'90%', zIndex: '1'}}>
-            {source}
-          </span>
-          <img 
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              position: "absolute",
+              right: "0",
+            }}
+          >
+            <span className=" badge rounded-pill bg-dark">{source}</span>
+          </div>
+          <img
             src={
               imageUrl
                 ? imageUrl
@@ -34,7 +42,7 @@ export class NewsItem extends Component {
               href={newsUrl}
               target="_blank"
               rel="noreferrer"
-              className="w3-button w3-pink"
+              className="btn btn-dark"
             >
               Read More
             </a>
