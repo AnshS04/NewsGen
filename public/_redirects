@@ -1,0 +1,8 @@
+# Redirects from what the browser requests to what we serve
+/                    /general
+/business            /business
+/sports              /sports
+/technology          /technology
+/entertainment       /entertainment
+/health              /health
+/science             /science
