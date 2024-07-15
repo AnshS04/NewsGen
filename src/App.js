@@ -6,6 +6,7 @@ import LoadingBar from "react-top-loading-bar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Fragment } from 'react';
 import ScrollButton from "./Components/ScrollButton";
+
 // import { Content, Heading } from './Components/Styles';
 
 const App = () => {
