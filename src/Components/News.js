@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NewsItem from "./newsItem";
 import PropTypes from "prop-types";
 import { PulseLoader } from "react-spinners";
 import InfiniteScroll from "react-infinite-scroll-component";
+import MyContext from "../context/MyContext";
 
 const News = (props) => {
 
-  const [articles, setArticles] = useState([])
-  const [loading, setLoading] = useState(true)
+  // const [articles, setArticles] = useState([])
+  // const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
-  const [totalResults, setTotalResults] = useState(0)
+  // const [totalResults, setTotalResults] = useState(0)
+
+  const { articles, setArticles, totalResults, setTotalResults, loading, setLoading } = useContext(MyContext);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
-
-
 
   const updateNews = async () => {
     props.setProgress(10);
